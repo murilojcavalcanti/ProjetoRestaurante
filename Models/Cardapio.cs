@@ -6,6 +6,8 @@ using System.Threading.Tasks;
 
 namespace ProjetoRestauranteUsuario
 {
+
+    using Interface;
     public static class Cardapio
     {
         private static List<Prato> cardapioCompleto = new List<Prato>()
