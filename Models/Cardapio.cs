@@ -42,6 +42,11 @@ namespace ProjetoRestauranteUsuario
             cardapioCompleto.Remove(prato);
         }
 
+        public static Prato SelecionarPrato (int indice)
+        {
+            return cardapioCompleto[indice];
+        }
+
 
     }
 }
