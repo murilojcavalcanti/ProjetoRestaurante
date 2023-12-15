@@ -1,4 +1,5 @@
-﻿namespace ProjetoRestauranteUsuario
+﻿
+namespace ProjetoRestauranteUsuario
 {
     public class Program
     {
