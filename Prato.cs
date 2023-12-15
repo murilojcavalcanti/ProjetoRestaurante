@@ -9,7 +9,7 @@ namespace ProjetoRestauranteUsuario
     public class Prato
     {
         private double preco { get; set; }
-        private string nome { get; set; }
+        public string nome { get; private set; }
         private string descricao { get; set; }
         
         public Prato(string nome, double preco, string descricao)
