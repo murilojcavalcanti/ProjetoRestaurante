@@ -1,5 +1,4 @@
-﻿
-namespace ProjetoRestauranteUsuario
+﻿namespace ProjetoRestauranteUsuario.Interface
 {
     public class ConsoleMenuUsuario
     {
@@ -44,8 +43,8 @@ namespace ProjetoRestauranteUsuario
 
             for (int i = 0; i < opcoes.Length; i++)
             {
-                Console.ForegroundColor = (i == selectedIndex) ? ConsoleColor.Black : ConsoleColor.Gray;
-                Console.BackgroundColor = (i == selectedIndex) ? ConsoleColor.Gray : ConsoleColor.Black;
+                Console.ForegroundColor = i == selectedIndex ? ConsoleColor.Black : ConsoleColor.Gray;
+                Console.BackgroundColor = i == selectedIndex ? ConsoleColor.Gray : ConsoleColor.Black;
 
                 Console.WriteLine($"{opcoes[i]}");
 

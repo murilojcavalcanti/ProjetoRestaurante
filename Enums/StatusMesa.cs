@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ProjetoRestauranteUsuario.Mesa
+namespace ProjetoRestauranteUsuario.Enums
 {
     public enum StatusMesaEnum
     {

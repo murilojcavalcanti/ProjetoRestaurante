@@ -1,5 +1,4 @@
-﻿
-namespace ProjetoRestauranteUsuario
+﻿namespace ProjetoRestauranteUsuario.Models
 {
     using Enums;
     internal class Funcionario
@@ -8,7 +7,7 @@ namespace ProjetoRestauranteUsuario
         private CargoFuncionario _cargo;
         private readonly string _nome;
 
-        internal Funcionario (int matricula, CargoFuncionario cargo, string nome)
+        internal Funcionario(int matricula, CargoFuncionario cargo, string nome)
         {
             _matricula = matricula;
             _cargo = cargo;
@@ -18,7 +17,7 @@ namespace ProjetoRestauranteUsuario
         //internal void AbrirPedido (Mesa mesa)
         //{
         //   //var conta = new Conta (string nome, double preco, string descricao)
-            //mesa.Conta(conta);       
+        //mesa.Conta(conta);       
         //}
 
         //internal void FecharConta (Mesa mesa)

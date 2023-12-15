@@ -6,8 +6,9 @@ using System.Reflection.PortableExecutable;
 using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
+using ProjetoRestauranteUsuario.Enums;
 
-namespace ProjetoRestauranteUsuario.Mesa
+namespace ProjetoRestauranteUsuario.Models
 {
     internal class Mesa
     {
