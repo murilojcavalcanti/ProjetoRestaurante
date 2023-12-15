@@ -16,6 +16,7 @@ namespace ProjetoRestauranteUsuario.Models
         private int _capacidade;
         private StatusMesaEnum _statusMesa;
         private Conta _contaMesa;
+        private Cardapio _numeroNoCardapio;
 
         internal int Numero
         {
@@ -32,6 +33,7 @@ namespace ProjetoRestauranteUsuario.Models
             set { _statusMesa = value; }
         }
         public Conta Conta { get { return _contaMesa; } }
+        public Cardapio Cardapio { get { return _numeroNoCardapio; } }
 
         public void reservar()
         {
@@ -39,12 +41,12 @@ namespace ProjetoRestauranteUsuario.Models
         }
         public decimal pedirConta()
         {
-            _contaMesa.exibirDetalhes();
+            _contaMesa.ExibirDetalhes();
             _contaMesa.Pagar();
         }
-        public void fazerPedido()
+        public void fazerPedido(int numeroPedido)
         {
-
+            _contaMesa.AdicionarPedido(_numeroNoCardapio.SelecionarPrato(numeroPedido));
         }
     }
 }
