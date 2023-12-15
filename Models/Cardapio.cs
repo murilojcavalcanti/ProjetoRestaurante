@@ -25,11 +25,11 @@ namespace ProjetoRestauranteUsuario
         };
 
        
-        public static void mostrarCardapio()
+        public static int mostrarCardapio()
         {
             string[] nomesPratos = cardapioCompleto.Select(prato => prato.nome).ToArray();
             ConsoleMenuUsuario menuCardapio = new ConsoleMenuUsuario(nomesPratos);
-            menuCardapio.ShowMenu();
+            return menuCardapio.ShowMenu();
         }
 
         public static void addAlimento(Prato prato)
