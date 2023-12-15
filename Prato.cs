@@ -6,19 +6,22 @@ using System.Threading.Tasks;
 
 namespace ProjetoRestauranteUsuario
 {
-    public abstract class Alimento
+    public class Prato
     {
         private double preco { get; set; }
         private string nome { get; set; }
         private string descricao { get; set; }
         
-        public Alimento(string nome, double preco, string descricao)
+        public Prato(string nome, double preco, string descricao)
         {
             this.nome = nome;
             this.preco = preco;
             this.descricao = descricao;
         }
 
-        public obterInformações
+        public void obterInformações ()
+        {
+            Console.WriteLine($"Nome: {this.nome} \nDescrição: {this.descricao} \nPreço: {this.preco}");
+        }
     }
 }
