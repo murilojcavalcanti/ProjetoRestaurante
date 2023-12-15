@@ -15,19 +15,15 @@ namespace ProjetoRestauranteUsuario
             _nome = nome;
         }
 
-        internal void AbrirPedido ()
-        {
+        //internal void AbrirPedido (Mesa mesa)
+        //{
+        //   //var conta = new Conta (string nome, double preco, string descricao)
+            //mesa.Conta(conta);       
+        //}
 
-        }
-
-        internal void EntregarPedido ()
-        {
-
-        }
-
-        internal void FecharConta ()
-        {
-
-        }
+        //internal void FecharConta (Mesa mesa)
+        //{
+        //    mesa.Conta.FecharConta();
+        //}
     }
 }
