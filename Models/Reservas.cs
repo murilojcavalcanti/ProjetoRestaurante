@@ -20,6 +20,12 @@ namespace ProjetoRestauranteUsuario.Models
             set { _cpfCliente = value; }
         }
 
+        internal char Turno
+        {
+            get { return _turno; }
+            set { _turno = value; }
+        }
+
         public DateTime DataReserva
         {
             get { return _dataReserva; }

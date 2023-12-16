@@ -43,22 +43,40 @@ namespace ProjetoRestauranteUsuario.Models
             this._numero = numero;
             this._capacidade = capacidade;
             this._statusMesa = StatusMesaEnum.Disponivel;
-            this._contaMesa = new Conta();
         }
 
-        public bool Reservar(DateTime dataReserva, string cpf, char turno)
+        public void Reservar(DateTime dataReserva, string cpf, char turno)
         {
             this._reservaMesa = new Reservas(dataReserva, cpf, turno);
             _statusMesa = StatusMesaEnum.Reservado;
+        }
+        public bool MesaReservada(DateTime dataReserva, string cpf, char turno)
+        {
+            if (_reservaMesa.DataReserva == dataReserva && _reservaMesa.CpfCliente == cpf && _reservaMesa.Turno == turno)
+            {
+                AbrirConta();
+                return true; ;
+            }
+            else
+            {
+                return false;
+            }
         }
         public decimal PedirConta()
         {
             _contaMesa.ExibirDetalhes();
             _contaMesa.Pagar();
+            _statusMesa = StatusMesaEnum.Disponivel;
         }
         public void FazerPedido(int numeroPedido)
         {
             _contaMesa.AdicionarPedido(_numeroNoCardapio.SelecionarPrato(numeroPedido));
+        }
+
+        public void AbrirConta()
+        {
+            _statusMesa = StatusMesaEnum.Ocupada;
+            this._contaMesa = new Conta();
         }
     }
 }
