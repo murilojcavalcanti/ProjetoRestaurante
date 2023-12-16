@@ -1,17 +1,16 @@
 ﻿namespace ProjetoRestauranteUsuario.Models
 {
     using Enums;
-    internal class Funcionario
+    internal class Funcionario : Usuario
     {
-        private readonly int _matricula;
         private CargoFuncionario _cargo;
-        private readonly string _nome;
 
-        internal Funcionario(int matricula, CargoFuncionario cargo, string nome)
+        internal Funcionario(string nome, int id, CargoFuncionario cargo) 
+            : base(nome, id)
         {
-            _matricula = matricula;
-            _cargo = cargo;
-            _nome = nome;
+           this.nome = nome;
+           this.id = id;
+           this._cargo = cargo;
         }
 
         //internal void AbrirPedido (Mesa mesa)
