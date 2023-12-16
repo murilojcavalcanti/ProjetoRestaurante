@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Data;
 using System.Linq;
 using System.Reflection.PortableExecutable;
 using System.Security.Cryptography;
@@ -17,6 +18,7 @@ namespace ProjetoRestauranteUsuario.Models
         private StatusMesaEnum _statusMesa;
         private Conta _contaMesa;
         private Cardapio _numeroNoCardapio;
+        private Reservas _reservaMesa;
 
         internal int Numero
         {
@@ -34,6 +36,7 @@ namespace ProjetoRestauranteUsuario.Models
         }
         public Conta Conta { get { return _contaMesa; } }
         public Cardapio Cardapio { get { return _numeroNoCardapio; } }
+        public Reservas Reservas { get { return _reservaMesa; } }
 
         public Mesa(int numero, int capacidade)
         {
@@ -43,8 +46,9 @@ namespace ProjetoRestauranteUsuario.Models
             this._contaMesa = new Conta();
         }
 
-        public void reservar()
+        public bool reservar(DateTime dataReserva, string cpf, char turno)
         {
+            this._reservaMesa = new Reservas(dataReserva, cpf, turno);
             _statusMesa = StatusMesaEnum.Reservado;
         }
         public decimal pedirConta()
