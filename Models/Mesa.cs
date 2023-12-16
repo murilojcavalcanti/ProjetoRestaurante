@@ -46,17 +46,17 @@ namespace ProjetoRestauranteUsuario.Models
             this._contaMesa = new Conta();
         }
 
-        public bool reservar(DateTime dataReserva, string cpf, char turno)
+        public bool Reservar(DateTime dataReserva, string cpf, char turno)
         {
             this._reservaMesa = new Reservas(dataReserva, cpf, turno);
             _statusMesa = StatusMesaEnum.Reservado;
         }
-        public decimal pedirConta()
+        public decimal PedirConta()
         {
             _contaMesa.ExibirDetalhes();
             _contaMesa.Pagar();
         }
-        public void fazerPedido(int numeroPedido)
+        public void FazerPedido(int numeroPedido)
         {
             _contaMesa.AdicionarPedido(_numeroNoCardapio.SelecionarPrato(numeroPedido));
         }
