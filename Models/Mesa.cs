@@ -33,22 +33,22 @@ namespace ProjetoRestauranteUsuario.Models
             get { return _statusMesa; }
             set { _statusMesa = value; }
         }
-        public Conta Conta { get { return _contaMesa; } }
-        public Reservas Reservas { get { return _reservaMesa; } }
+        internal Conta Conta { get { return _contaMesa; } }
+        internal Reservas Reservas { get { return _reservaMesa; } }
 
-        public Mesa(int numero, int capacidade)
+        internal Mesa(int numero, int capacidade)
         {
             this._numero = numero;
             this._capacidade = capacidade;
             this._statusMesa = StatusMesaEnum.Disponivel;
         }
 
-        public void Reservar(DateTime dataReserva, string cpf, char turno)
+        internal void Reservar(DateTime dataReserva, string cpf, char turno)
         {
             this._reservaMesa = new Reservas(dataReserva, cpf, turno);
             _statusMesa = StatusMesaEnum.Reservado;
         }
-        public bool MesaReservada(DateTime dataReserva, string cpf, char turno)
+        internal bool MesaReservada(DateTime dataReserva, string cpf, char turno)
         {
             if (_reservaMesa.DataReserva == dataReserva && _reservaMesa.CpfCliente == cpf && _reservaMesa.Turno == turno)
             {
@@ -60,19 +60,19 @@ namespace ProjetoRestauranteUsuario.Models
                 return false;
             }
         }
-        public void PedirConta()
+        internal void PedirConta()
         {
             _contaMesa.ExibirDetalhes();
             _contaMesa.Pagar();
             _statusMesa = StatusMesaEnum.Disponivel;
         }
-        public void FazerPedido(int indice)
+        internal void FazerPedido(int indice)
         {
             var pedido = new Pedido(Cardapio.SelecionarPrato(indice));
             _contaMesa.AdicionarPedido(pedido);
         }
 
-        public void AbrirConta()
+        internal void AbrirConta()
         {
             _statusMesa = StatusMesaEnum.Ocupada;
             this._contaMesa = new Conta();

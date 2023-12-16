@@ -2,30 +2,34 @@
 
 namespace ProjetoRestauranteUsuario.Models
 {
-    public class Conta
+    internal class Conta
     {
         private List<Pedido> pedidos = new List<Pedido>();
-        public bool Pago { get; private set; }
+        private bool pago;
 
-
-        public void AdicionarPedido(Pedido pedido)
+        internal bool Pago
+        {
+            get { return pago; }
+            set { pago = value; }
+        }
+        internal void AdicionarPedido(Pedido pedido)
         {
             pedidos.Add(pedido);
         }
 
-        public decimal CalcularTotal()
+        internal decimal CalcularTotal()
         {
             decimal total = 0;
 
             foreach (var pedido in pedidos)
             {
-                total += pedido.CalcularTotal();
+                total += pedido.CalcularValorPedido();
             }
 
             return total;
         }
 
-        public void ExibirDetalhes()
+        internal void ExibirDetalhes()
         {
             Console.WriteLine("Detalhes da Conta:");
 
@@ -38,7 +42,7 @@ namespace ProjetoRestauranteUsuario.Models
             Console.WriteLine($"Total da Conta: R$ {CalcularTotal():F2}");
         }
 
-        public void Pagar()
+        internal void Pagar()
         {
             Pago = true;
             Console.WriteLine("Pedido foi pago.");

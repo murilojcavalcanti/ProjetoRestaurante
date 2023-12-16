@@ -6,20 +6,35 @@ using System.Threading.Tasks;
 
 namespace ProjetoRestauranteUsuario
 {
-    public class Prato
+    internal class Prato
     {
-        private double preco { get; set; }
-        public string nome { get; private set; }
-        private string descricao { get; set; }
-        
-        public Prato(string nome, double preco, string descricao)
+        private decimal preco;
+        private string nome;
+        private string descricao;
+
+        internal decimal Preco
+        {
+            get { return preco; }
+            set { preco = value; }
+        }
+        internal string Nome
+        {
+            get { return nome; }
+            set { nome = value; }
+        }
+        internal string Descricao
+        {
+            get { return descricao; }
+            set { descricao = value; }
+        }
+        internal Prato(string nome, decimal preco, string descricao)
         {
             this.nome = nome;
             this.preco = preco;
             this.descricao = descricao;
         }
 
-        public void obterInformações ()
+        internal void obterInformações ()
         {
             Console.WriteLine($"Nome: {this.nome} \nDescrição: {this.descricao} \nPreço: {this.preco}");
         }

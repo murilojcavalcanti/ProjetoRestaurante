@@ -26,7 +26,7 @@ namespace ProjetoRestauranteUsuario.Models
             set { _turno = value; }
         }
 
-        public DateTime DataReserva
+        internal DateTime DataReserva
         {
             get { return _dataReserva; }
             set
@@ -44,7 +44,7 @@ namespace ProjetoRestauranteUsuario.Models
             }
         }
 
-        public Reservas(DateTime dataReserva, string cpf, char turno)
+        internal Reservas(DateTime dataReserva, string cpf, char turno)
         {
             this._dataReserva = dataReserva;
             this._cpfCliente = cpf;

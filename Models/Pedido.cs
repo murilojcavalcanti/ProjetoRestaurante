@@ -8,26 +8,42 @@ namespace ProjetoRestauranteUsuario.Models
 {
     internal class Pedido
     {
-        public int ID { get; set; }
-        private List<Prato> pratosDoPedido { get; set; }
-
+        private int id;
+        private List<Prato> pratosDoPedido = new List<Prato>();
         private decimal valorDoPedido;
 
-        public Pedido(Prato prato)
+        internal int Id
+        {
+            get { return id; }
+            set { id = value; }
+        }
+        internal decimal ValorDoPedido
+        {
+            get { return valorDoPedido; }
+            set { valorDoPedido = value; }
+        }
+
+        internal Pedido(Prato prato)
         {
             pratosDoPedido.Add(prato);            
         }
 
-        public decimal CalcularValorPedido()
+        internal decimal CalcularValorPedido()
         {
 
             foreach (Prato prato in pratosDoPedido)
             {
-                valorDoPedido += prato.preco;
+                valorDoPedido += prato.Preco;
 
             }
             return valorDoPedido;
         }
+
+        internal void ExibirItens()
+        {
+
+        }
+        
 
     }
 }
