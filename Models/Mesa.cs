@@ -35,6 +35,14 @@ namespace ProjetoRestauranteUsuario.Models
         public Conta Conta { get { return _contaMesa; } }
         public Cardapio Cardapio { get { return _numeroNoCardapio; } }
 
+        public Mesa(int numero, int capacidade)
+        {
+            this._numero = numero;
+            this._capacidade = capacidade;
+            this._statusMesa = StatusMesaEnum.Disponivel;
+            this._contaMesa = new Conta();
+        }
+
         public void reservar()
         {
             _statusMesa = StatusMesaEnum.Reservado;
