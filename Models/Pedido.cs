@@ -26,6 +26,7 @@ namespace ProjetoRestauranteUsuario.Models
                 valorDoPedido += prato.preco;
 
             }
+            return valorDoPedido;
         }
 
     }

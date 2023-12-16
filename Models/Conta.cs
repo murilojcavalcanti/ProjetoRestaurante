@@ -1,46 +1,49 @@
 ﻿using System;
 
-public class Conta
+namespace ProjetoRestauranteUsuario.Models
 {
-    private List<Pedido> pedidos = new List<Pedido>();
-    public bool Pago { get; private set; }
-
-    
-    public void AdicionarPedido(Pedido pedido)
+    public class Conta
     {
-        pedidos.Add(pedido);
-    }
+        private List<Pedido> pedidos = new List<Pedido>();
+        public bool Pago { get; private set; }
 
-    public decimal CalcularTotal()
-    {
-        decimal total = 0;
 
-        foreach (var pedido in pedidos)
+        public void AdicionarPedido(Pedido pedido)
         {
-            total += pedido.CalcularTotal();
+            pedidos.Add(pedido);
         }
 
-        return total;
-    }
-
-    public void ExibirDetalhes()
-    {
-        Console.WriteLine("Detalhes da Conta:");
-
-        foreach (var pedido in pedidos)
+        public decimal CalcularTotal()
         {
-            pedido.ExibirItens();
-            Console.WriteLine("-------------------------");
+            decimal total = 0;
+
+            foreach (var pedido in pedidos)
+            {
+                total += pedido.CalcularTotal();
+            }
+
+            return total;
         }
 
-        Console.WriteLine($"Total da Conta: R$ {CalcularTotal():F2}");
-    }
+        public void ExibirDetalhes()
+        {
+            Console.WriteLine("Detalhes da Conta:");
 
-    public void Pagar()
-    {
-        Pago = true;
-        Console.WriteLine("Pedido foi pago.");
-    }
+            foreach (var pedido in pedidos)
+            {
+                pedido.ExibirItens();
+                Console.WriteLine("-------------------------");
+            }
 
+            Console.WriteLine($"Total da Conta: R$ {CalcularTotal():F2}");
+        }
+
+        public void Pagar()
+        {
+            Pago = true;
+            Console.WriteLine("Pedido foi pago.");
+        }
+
+    }
 }
 
