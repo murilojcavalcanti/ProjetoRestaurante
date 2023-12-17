@@ -8,6 +8,13 @@ namespace ProjetoRestauranteUsuario
 {
 
     using Interface;
+    using ProjetoRestauranteUsuario.ReceivingData;
+    using System.Text.Json;
+    using Newtonsoft.Json;
+    using System.Text.Json;
+    using System.Text.Json;
+    using System.Globalization;
+
     internal static class Cardapio
     {
         private static List<Prato> cardapioCompleto = new List<Prato>()
@@ -41,11 +48,19 @@ namespace ProjetoRestauranteUsuario
         {
             cardapioCompleto.Remove(prato);
         }
+        internal static void RecebeJson(string caminho)
+        {
+
+            ReceiveData.RecebeArquivoClientes(cardapioCompleto,caminho);
+
+              
+        }
 
         internal static Prato SelecionarPrato (int indice)
         {
             return cardapioCompleto[indice];
         }
+
 
 
     }
