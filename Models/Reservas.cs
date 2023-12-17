@@ -51,5 +51,17 @@ namespace ProjetoRestauranteUsuario.Models
             this._turno = turno;
             this._confirmacaoReserva = true;
         }
+
+        internal bool ConfirmacaoReserva(DateTime dataReserva, string cpf, char turno)
+        {
+            if (_dataReserva == dataReserva && _cpfCliente == cpf && _turno == turno)
+            {
+                return true; ;
+            }
+            else
+            {
+                return false;
+            }
+        }
     }
 }

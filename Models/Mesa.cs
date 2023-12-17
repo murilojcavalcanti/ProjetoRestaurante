@@ -50,15 +50,7 @@ namespace ProjetoRestauranteUsuario.Models
         }
         internal bool MesaReservada(DateTime dataReserva, string cpf, char turno)
         {
-            if (_reservaMesa.DataReserva == dataReserva && _reservaMesa.CpfCliente == cpf && _reservaMesa.Turno == turno)
-            {
-                AbrirConta();
-                return true; ;
-            }
-            else
-            {
-                return false;
-            }
+            return _reservaMesa.ConfirmacaoReserva(dataReserva, cpf, turno);      //SE FOR VERDADEIRO LEMBRAR DE CHAMAR MÉTODO ABRIRCONTA()
         }
         internal void PedirConta()
         {
