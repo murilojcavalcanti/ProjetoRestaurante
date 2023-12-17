@@ -1,0 +1,27 @@
+﻿[
+    {
+      "nome": "Spaghetti alla Carbonara",
+      "preco": 25.99,
+      "descricao": "Massa italiana com molho à base de queijo, ovos, pancetta e pimenta preta."
+    },
+    {
+      "nome": "Sushi Misto",
+      "preco": 35.5,
+      "descricao": "Uma seleção variada de sushis, sashimis e rolls."
+    },
+    {
+      "nome": "Frango ao Curry",
+      "preco": 18.75,
+      "descricao": "Pedacinhos de frango cozidos em um molho curry aromático, acompanhado de arroz basmati."
+    },
+    {
+      "nome": "Salada Caprese",
+      "preco": 12.0,
+      "descricao": "Tomates frescos, mussarela de búfala, manjericão e azeite de oliva."
+    },
+    {
+      "nome": "Hambúrguer Gourmet",
+      "preco": 20.5,
+      "descricao": "Hambúrguer suculento com queijo cheddar, alface, tomate e molho especial."
+    }
+  ]

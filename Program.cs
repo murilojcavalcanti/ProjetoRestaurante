@@ -5,12 +5,17 @@ namespace ProjetoRestauranteUsuario
     {
         public static void Main(string[] args)
         {
-            RecepcionarCliente();
-            
+            //RecepcionarCliente();
+
             // CLIENTE CHEGA AO RESTAURANTE
             // CLIENTE É ALOCADO PRA UMA MESA
             // GARÇOM ATENDE O CLIENTE
             // CLIENTE SELECIONA O PRATO
+
+            //Cardapio.mostrarCardapio();
+            Console.WriteLine("Pratos adicionados");
+            Cardapio.RecebeJson(@"../../../ReceivingData/pratos.json");
+            Cardapio.mostrarCardapio();
 
         }
 
