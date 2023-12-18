@@ -1,6 +1,7 @@
 ﻿using Figgle;
 using ProjetoRestauranteUsuario.Interface.Metodos;
 using ProjetoRestauranteUsuario.Models;
+using ProjetoRestauranteUsuario.Models.CardapioBistro;
 using System;
 using System.Collections.Generic;
 using System.Globalization;
