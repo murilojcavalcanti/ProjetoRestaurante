@@ -18,7 +18,7 @@ namespace ProjetoRestauranteUsuario.Interface
 
                 string[] opcoesUsuario = { "1. Sou cliente", "2. Sou funcionário", "3. Sair" };
 
-                var menuPrincipal = new ConsoleMenu(opcoesUsuario);
+                var menuPrincipal = new ConsoleMenu<string>(opcoesUsuario);
                 int selecaoUsuario = menuPrincipal.ShowMenu();
                 switch (selecaoUsuario)
                 {

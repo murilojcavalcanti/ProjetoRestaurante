@@ -19,7 +19,7 @@ namespace ProjetoRestauranteUsuario.Models.CardapioBistro
         internal static int MostrarCardapio()
         {
             string[] nomesItens = cardapioCompleto.Select(item => item.Nome).ToArray();
-            ConsoleMenu menuCardapio = new ConsoleMenu(nomesItens);
+            var menuCardapio = new ConsoleMenu<string>(nomesItens);
             return menuCardapio.ShowMenu();
         }
 
@@ -45,7 +45,7 @@ namespace ProjetoRestauranteUsuario.Models.CardapioBistro
             {
                 foreach (T item in cardapioCompleto)
                 {
-                    Console.WriteLine(item.ToString());
+                    Console.WriteLine(item.Nome);
                 }
 
                 Console.WriteLine("\nPressione Enter para voltar ao menu principal...");

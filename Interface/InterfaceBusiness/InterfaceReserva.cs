@@ -1,17 +1,11 @@
 ﻿using ProjetoRestauranteUsuario.Models.Business;
-using ProjetoRestauranteUsuario.Models.CardapioBistro;
-using System;
-using System.Collections.Generic;
 using System.Globalization;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace ProjetoRestauranteUsuario.Interface.Metodos
+namespace ProjetoRestauranteUsuario.Interface.InterfaceBusiness
 {
     internal class InterfaceReserva
     {
-        public static bool FazerReserva()
+        public static bool FazerReserva(Mesa mesa)
         {
             Console.WriteLine("Digite o seu CPF:");
             string cpf = Console.ReadLine();
@@ -51,10 +45,10 @@ namespace ProjetoRestauranteUsuario.Interface.Metodos
             {
                 Console.Clear();
 
-                Console.WriteLine("Gostaria de fazer seu pedido?"+"Veja as opções em nosso cardápio:");
+                Console.WriteLine("Gostaria de fazer seu pedido?" + "Veja as opções em nosso cardápio:");
                 string[] opcoesUsuario = { "1. Visualizar cardápio de pratos", "2. Visualizar cardápio de bebidas", "3. Sair" };
-                
-                var opcoes = new ConsoleMenu(opcoesUsuario);
+
+                var opcoes = new ConsoleMenu<string>(opcoesUsuario);
                 int selecaoUsuario = opcoes.ShowMenu();
                 switch (selecaoUsuario)
                 {
@@ -75,5 +69,5 @@ namespace ProjetoRestauranteUsuario.Interface.Metodos
             } while (!sair);
         }
     }
-    
+
 }

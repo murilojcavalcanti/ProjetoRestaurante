@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using ProjetoRestauranteUsuario.Models.CardapioBistro;
 
-namespace ProjetoRestauranteUsuario.Interface.Metodos
+namespace ProjetoRestauranteUsuario.Interface.InterfaceBusiness
 {
     internal class InterfaceCardápio
     {
@@ -16,7 +16,7 @@ namespace ProjetoRestauranteUsuario.Interface.Metodos
 
         public static void CardapioBebidas()
         {
-            
+
         }
     }
 }

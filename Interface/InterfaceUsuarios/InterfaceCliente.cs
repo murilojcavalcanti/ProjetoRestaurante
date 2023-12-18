@@ -1,4 +1,6 @@
-﻿using ProjetoRestauranteUsuario.Interface.Metodos;
+﻿using ProjetoRestauranteUsuario.Interface.InterfaceBusiness;
+using ProjetoRestauranteUsuario.Interface.Metodos;
+using ProjetoRestauranteUsuario.Models.Business;
 using ProjetoRestauranteUsuario.Models.CardapioBistro;
 using System;
 using System.Collections.Generic;
@@ -20,14 +22,14 @@ namespace ProjetoRestauranteUsuario.Interface.InterfaceUsuarios
                 Console.WriteLine("Escolha uma das opções abaixo para começar:\n");
 
 
-                string[] opcoesUsuario = { "1. Desejo fazer uma reserva", "2. Já possuo reserva", "3. Ver cardápio", "4. Mais informações", "5. Sair" };
+                string[] opcoesUsuario = { "1. Desejo fazer uma reserva", "2. Já possuo reserva", "3. Ver cardápio", "4. Ver mesas disponíveis.", "5. Sair" };
 
-                var menuPrincipal = new ConsoleMenu(opcoesUsuario);
+                var menuPrincipal = new ConsoleMenu <string> (opcoesUsuario);
                 int selecaoUsuario = menuPrincipal.ShowMenu();
                 switch (selecaoUsuario)
                 {
                     case 0:
-                        InterfaceReserva.FazerReserva();
+                        //InterfaceReserva.FazerReserva(MesaData.BuscarMesa(InterfaceMesa.SelecionarMesa()+1));
                         break;
                     case 1:
                         InterfaceReserva.TemReserva();
@@ -58,7 +60,7 @@ namespace ProjetoRestauranteUsuario.Interface.InterfaceUsuarios
                 Console.WriteLine("Veja as opções em nosso cardápio:");
                 string[] opcoesUsuario = { "1. Visualizar cardápio de pratos", "2. Visualizar cardápio de bebidas", "3. Voltar ao menu principal" };
 
-                var opcoes = new ConsoleMenu(opcoesUsuario);
+                var opcoes = new ConsoleMenu<string>(opcoesUsuario);
                 int selecaoUsuario = opcoes.ShowMenu();
                 switch (selecaoUsuario)
                 {

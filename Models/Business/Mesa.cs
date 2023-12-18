@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-
+﻿
 namespace ProjetoRestauranteUsuario.Models.Business
 {
     using Enums;
@@ -37,17 +34,6 @@ namespace ProjetoRestauranteUsuario.Models.Business
 
         internal Reservas Reservas { get { return _reservaMesa; } }
 
-        internal Mesa(int numero, int capacidade)
-        {
-            _numero = numero;
-            _capacidade = capacidade;
-            _statusMesa = StatusMesaEnum.Disponivel;
-        }
-
-        internal void AbrirConta(Conta conta)
-        {
-            this.Conta = conta;
-        }
         internal void Reservar(DateTime dataReserva, string cpf, char turno, int limitePessoas)
         {
             if (_capacidade >= limitePessoas)
@@ -62,8 +48,19 @@ namespace ProjetoRestauranteUsuario.Models.Business
         }
         internal bool MesaReservada(DateTime dataReserva, string cpf, char turno)
         {
-            return _reservaMesa.ConfirmacaoReserva(dataReserva, cpf, turno);      //SE FOR VERDADEIRO LEMBRAR DE CHAMAR MÉTODO ABRIRCONTA()
+            return _reservaMesa.ConfirmacaoReserva(dataReserva, cpf, turno);
         }
+        internal void LiberarMesa()
+        {
+            _statusMesa = StatusMesaEnum.Disponivel;
+        }
+        internal void FecharConta()
+        {
+            _contaMesa.ExibirDetalhes();
+            _contaMesa.Pagar();
+            _statusMesa = StatusMesaEnum.Disponivel;
+        }
+
         internal void PedirConta()
         {
             _contaMesa.ExibirDetalhes();

@@ -1,6 +1,7 @@
 ﻿using Figgle;
 using ProjetoRestauranteUsuario.Interface;
 using ProjetoRestauranteUsuario.Interface.Metodos;
+using ProjetoRestauranteUsuario.Models.Business;
 namespace ProjetoRestauranteUsuario
 {
 
@@ -8,18 +9,21 @@ namespace ProjetoRestauranteUsuario
     {
         public static void Main(string[] args)
         {
-            AtualizarDados.AtualizarCardapio();
-            AtualizarDados.AtualizarFuncionarios();
-            Console.Clear();
+            AtualizarDados.AtualizarMesas();
+            MesaData.ExibirMesas();
+            //AtualizarDados.AtualizarCardapio();
+            //AtualizarDados.AtualizarFuncionarios();
+            //AtualizarDados.AtualizarMesas();
+            //Console.Clear();
 
-            ConsoleKeyInfo teclaUsuario;
-            do
-            {
-                MostrarNomeRestaurante();
-                Console.WriteLine("BEM VINDO AO RESTAURANTE GEEKS </BISTRÔ>" + "\nAperte Enter para começar");
-                teclaUsuario = Console.ReadKey();
-            } while (teclaUsuario.Key != ConsoleKey.Enter);
-            MenuPrincipal.SelecionarUsuario();
+            //ConsoleKeyInfo teclaUsuario;
+            //do
+            //{
+            //    MostrarNomeRestaurante();
+            //    Console.WriteLine("BEM VINDO AO RESTAURANTE GEEKS </BISTRÔ>" + "\nAperte Enter para começar");
+            //    teclaUsuario = Console.ReadKey();
+            //} while (teclaUsuario.Key != ConsoleKey.Enter);
+            //MenuPrincipal.SelecionarUsuario();
         }
         public static void MostrarNomeRestaurante()
         {

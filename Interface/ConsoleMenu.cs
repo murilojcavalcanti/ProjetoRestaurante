@@ -1,11 +1,13 @@
-﻿namespace ProjetoRestauranteUsuario.Interface
+﻿using System;
+
+namespace ProjetoRestauranteUsuario.Interface
 {
-    public class ConsoleMenu
+    public class ConsoleMenu<T>
     {
-        private readonly string[] opcoes;
+        private readonly T[] opcoes;
         private int selectedIndex;
 
-        public ConsoleMenu(string[] menuItems)
+        public ConsoleMenu(T[] menuItems)
         {
             opcoes = menuItems;
             selectedIndex = 0;
@@ -52,5 +54,4 @@
             }
         }
     }
-
 }

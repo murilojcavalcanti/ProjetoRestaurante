@@ -19,6 +19,9 @@
     <None Update="ReceivingData\funcionarios.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Update="ReceivingData\mesas.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Update="ReceivingData\pratos.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
