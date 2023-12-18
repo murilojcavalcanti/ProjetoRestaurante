@@ -11,7 +11,6 @@ namespace ProjetoRestauranteUsuario.Interface.Metodos
     {
         public static void CardapioRefeicoes()
         {
-            CardapioPratos.RecebeJson(@"../../../ReceivingData/pratos.json");
             CardapioPratos.MostrarCardapio();
         }
 

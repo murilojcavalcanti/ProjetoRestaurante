@@ -1,6 +1,6 @@
 ﻿using Figgle;
 using ProjetoRestauranteUsuario.Interface;
-using ProjetoRestauranteUsuario.Models.CardapioBistro;
+using ProjetoRestauranteUsuario.Interface.Metodos;
 namespace ProjetoRestauranteUsuario
 {
 
@@ -8,6 +8,9 @@ namespace ProjetoRestauranteUsuario
     {
         public static void Main(string[] args)
         {
+            AtualizarDados.AtualizarCardapio();
+            AtualizarDados.AtualizarFuncionarios();
+            Console.Clear();
 
             ConsoleKeyInfo teclaUsuario;
             do
@@ -16,7 +19,7 @@ namespace ProjetoRestauranteUsuario
                 Console.WriteLine("BEM VINDO AO RESTAURANTE GEEKS </BISTRÔ>" + "\nAperte Enter para começar");
                 teclaUsuario = Console.ReadKey();
             } while (teclaUsuario.Key != ConsoleKey.Enter);
-            MenuPrincipal.ExibirMenu();
+            MenuPrincipal.SelecionarUsuario();
         }
         public static void MostrarNomeRestaurante()
         {

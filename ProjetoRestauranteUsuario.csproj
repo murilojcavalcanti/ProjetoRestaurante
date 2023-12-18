@@ -13,6 +13,12 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Update="ReceivingData\bebidas.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="ReceivingData\funcionarios.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Update="ReceivingData\pratos.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>

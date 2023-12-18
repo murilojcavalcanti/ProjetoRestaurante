@@ -1,0 +1,73 @@
+[
+  {
+    "nome": "João Silva",
+    "id": 1,
+    "cargo": "Gerente",
+    "login": "joao_silva",
+    "senha": "senha123"
+  },
+  {
+    "nome": "Maria Oliveira",
+    "id": 2,
+    "cargo": "Atendente",
+    "login": "maria_oliveira",
+    "senha": "senha456"
+  },
+  {
+    "nome": "Carlos Santos",
+    "id": 3,
+    "cargo": "Chef de Cozinha",
+    "login": "carlos_santos",
+    "senha": "senha789"
+  },
+  {
+    "nome": "Fernanda Costa",
+    "id": 4,
+    "cargo": "Garçom",
+    "login": "fernanda_costa",
+    "senha": "senhaabc"
+  },
+  {
+    "nome": "Ricardo Pereira",
+    "id": 5,
+    "cargo": "Barman",
+    "login": "ricardo_pereira",
+    "senha": "senhadef"
+  },
+  {
+    "nome": "Patrícia Lima",
+    "id": 6,
+    "cargo": "Atendente",
+    "login": "patricia_lima",
+    "senha": "senhaghi"
+  },
+  {
+    "nome": "André Almeida",
+    "id": 7,
+    "cargo": "Cozinheiro",
+    "login": "andre_almeida",
+    "senha": "senhajkl"
+  },
+  {
+    "nome": "Laura Sousa",
+    "id": 8,
+    "cargo": "Atendente",
+    "login": "laura_sousa",
+    "senha": "senha123mno"
+  },
+  {
+    "nome": "Roberto Fernandes",
+    "id": 9,
+    "cargo": "Garçom",
+    "login": "roberto_fernandes",
+    "senha": "senha456pqr"
+  },
+  {
+    "nome": "Isabel Santos",
+    "id": 10,
+    "cargo": "Atendente",
+    "login": "isabel_santos",
+    "senha": "senha789stu"
+  }
+]
+
