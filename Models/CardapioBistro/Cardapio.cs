@@ -9,82 +9,44 @@ namespace ProjetoRestauranteUsuario.Models.CardapioBistro
 
     using Interface;
     using ProjetoRestauranteUsuario.ReceivingData;
-    using System.Text.Json;
-    using Newtonsoft.Json;
-    using System.Text.Json;
-    using System.Text.Json;
-    using System.Globalization;
 
-    internal static class Cardapio
+    internal abstract class CardapioBase<T> where T : Alimento
     {
-        private static List<Prato> cardapioCompleto = new List<Prato>()
-        {
-            new Prato("Lasanha", 15.99m, "Massa com molho de tomate, queijo e carne."),
-            new Prato("Sushi", 22.50m, "Arroz temperado com peixe cru e algas."),
-            new Prato("Pizza Margherita", 12.50m, "Pizza com molho de tomate, mussarela e manjericão."),
-            new Prato("Hambúrguer", 9.99m, "Pão, carne, queijo, alface, tomate e molhos."),
-            new Prato("Salada Caesar", 8.75m, "Alface, croutons, queijo parmesão e molho Caesar."),
-            new Prato("Tacos", 11.25m, "Tortillas com carne, queijo, alface e molhos."),
-            new Prato("Risoto de Cogumelos", 14.20m, "Arroz cremoso com cogumelos e queijo parmesão."),
-            new Prato("Frango Assado", 13.45m, "Frango temperado e assado no forno."),
-            new Prato("Massa Carbonara", 16.30m, "Espaguete com molho à base de ovos, queijo e bacon."),
-            new Prato("Churrasco", 18.75m, "Carnes grelhadas, como picanha, linguiça e frango.")
-        };
+        protected List<T> cardapioCompleto;
 
-
-        internal static int mostrarCardapio()
+        internal int MostrarCardapio()
         {
-            string[] nomesPratos = cardapioCompleto.Select(prato => prato.Nome).ToArray();
-            ConsoleMenu menuCardapio = new ConsoleMenu(nomesPratos);
+            string[] nomesItens = cardapioCompleto.Select(item => item.Nome).ToArray();
+            ConsoleMenu menuCardapio = new ConsoleMenu(nomesItens);
             return menuCardapio.ShowMenu();
         }
 
-        internal static void addAlimento(Prato prato)
+        internal void AdicionarItem(T item)
         {
-            cardapioCompleto.Add(prato);
+            cardapioCompleto.Add(item);
         }
 
-        internal static void removerAlimento(Prato prato)
+        internal void RemoverItem(T item)
         {
-            cardapioCompleto.Remove(prato);
-        }
-        internal static void RecebeJson(string caminho)
-        {
-
-            ReceiveData.RecebeArquivoClientes(cardapioCompleto, caminho);
-
-
+            cardapioCompleto.Remove(item);
         }
 
-        internal static Prato SelecionarPrato(int indice)
+        internal T SelecionarItem(int indice)
         {
             return cardapioCompleto[indice];
         }
 
-        internal static void ApenasExibirPratos()
+        internal void ExibirItens()
         {
             ConsoleKeyInfo teclaUsuario;
             do
             {
-                foreach (Prato prato in cardapioCompleto)
+                foreach (T item in cardapioCompleto)
                 {
-                    Console.WriteLine(prato.ToString());
+                    Console.WriteLine(item.ToString());
                 }
 
                 Console.WriteLine("\nPressione Enter para voltar ao menu principal...");
                 teclaUsuario = Console.ReadKey();
             } while (teclaUsuario.Key != ConsoleKey.Enter);
-
         }
-
-        internal static void ApenasExibirBebidas()
-        {
-            ConsoleKeyInfo teclaUsuario;
-            do
-            {
-                Console.WriteLine($"!!!!CARDAPIO DE BEIBDAS AQUI!!!!\n" + "\nPressione Enter para voltar ao menu principal...");
-                teclaUsuario = Console.ReadKey();
-            } while (teclaUsuario.Key != ConsoleKey.Enter);
-        }
-    }
-}
