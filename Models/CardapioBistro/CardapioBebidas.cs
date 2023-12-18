@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ProjetoRestauranteUsuario.Models.AlimentosBistro;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -14,6 +15,8 @@ namespace ProjetoRestauranteUsuario.Models.CardapioBistro
             {
                 new Bebida("Lasanha", 15.99m, "Massa com molho de tomate, queijo e carne."),
             };
+
+
         }
     }
 }

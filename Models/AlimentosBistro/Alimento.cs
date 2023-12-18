@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ProjetoRestauranteUsuario
+namespace ProjetoRestauranteUsuario.Models.AlimentosBistro
 {
-    internal class Prato
+    abstract class Alimento
     {
         private decimal preco;
         private string nome;
@@ -27,16 +27,16 @@ namespace ProjetoRestauranteUsuario
             get { return descricao; }
             set { descricao = value; }
         }
-        public Prato (string nome, decimal preco, string descricao)
+        public Prato(string nome, decimal preco, string descricao)
         {
             this.nome = nome;
             this.preco = preco;
             this.descricao = descricao;
         }
 
-        internal void obterInformações ()
+        internal void obterInformações()
         {
-            Console.WriteLine($"Nome: {this.nome} \nDescrição: {this.descricao} \nPreço: {this.preco}");
+            Console.WriteLine($"Nome: {nome} \nDescrição: {descricao} \nPreço: {preco}");
         }
     }
 }

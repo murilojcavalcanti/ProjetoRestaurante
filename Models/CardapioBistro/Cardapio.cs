@@ -8,6 +8,7 @@ namespace ProjetoRestauranteUsuario.Models.CardapioBistro
 {
 
     using Interface;
+    using ProjetoRestauranteUsuario.Models.AlimentosBistro;
     using ProjetoRestauranteUsuario.ReceivingData;
 
     internal abstract class CardapioBase<T> where T : Alimento
