@@ -1,22 +1,29 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿
+using ProjetoRestauranteUsuario.Models.Business;
 using ProjetoRestauranteUsuario.Models.CardapioBistro;
 
 namespace ProjetoRestauranteUsuario.Interface.InterfaceBusiness
 {
     internal class InterfaceCardápio
     {
-        public static void CardapioRefeicoes()
+        internal static void AbrirConta(Reservas reserva)
         {
-            CardapioPratos.MostrarCardapio();
+            reserva.Mesa.AbrirConta();
+        }
+        public static void CardapioPratosRestaurante(Reservas reserva)
+        {
+            int selecao = CardapioPratos.MostrarCardapio();
+
+            reserva.Mesa.Conta.AdicionarPedido(CardapioPratos.SelecionarItem(selecao));
+
+            Console.WriteLine("Pedido adicionado com sucesso!");
         }
 
-        public static void CardapioBebidas()
+        public static void CardapioBebidasRestaurante(Reservas reserva)
         {
-
+            int selecao = CardapioBebidas.MostrarCardapio();
+            //reserva.Mesa.Conta.AdicionarPedido(CardapioBebidas.SelecionarItem(selecao));
+            //Console.WriteLine("Pedido adicionado com sucesso!");
         }
     }
 }

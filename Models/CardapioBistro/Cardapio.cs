@@ -1,16 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
+﻿
 namespace ProjetoRestauranteUsuario.Models.CardapioBistro
 {
 
     using Interface;
     using ProjetoRestauranteUsuario.Models.AlimentosBistro;
+    using ProjetoRestauranteUsuario.Models.Business;
     using ProjetoRestauranteUsuario.ReceivingData;
-    using AlimentosBistro;
 
     internal abstract class CardapioBase<T> where T : Alimento
     {
@@ -18,8 +13,9 @@ namespace ProjetoRestauranteUsuario.Models.CardapioBistro
 
         internal static int MostrarCardapio()
         {
-            string[] nomesItens = cardapioCompleto.Select(item => item.Nome).ToArray();
-            var menuCardapio = new ConsoleMenu<string>(nomesItens);
+            string[] itensFormatados = cardapioCompleto.Select(item => $"{item.Nome} - R${item.Preco:F2}").ToArray();
+
+            var menuCardapio = new ConsoleMenu<string>(itensFormatados);
             return menuCardapio.ShowMenu();
         }
 
@@ -31,11 +27,6 @@ namespace ProjetoRestauranteUsuario.Models.CardapioBistro
         internal static void RemoverItem(T item)
         {
             cardapioCompleto.Remove(item);
-        }
-
-        internal static T SelecionarItem(int indice)
-        {
-            return cardapioCompleto[indice];
         }
 
         internal static void ExibirItens()

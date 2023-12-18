@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿
 using ProjetoRestauranteUsuario.Models.AlimentosBistro;
 
 namespace ProjetoRestauranteUsuario.Models.Business
@@ -11,26 +7,22 @@ namespace ProjetoRestauranteUsuario.Models.Business
     {
         private int id;
         private List<Prato> pratosDoPedido = new List<Prato>();
-        private decimal valorDoPedido;
+        private List<Bebida> bebidasDoPedido = new List<Bebida>();
 
         internal int Id
         {
             get { return id; }
             set { id = value; }
         }
-        internal decimal ValorDoPedido
-        {
-            get { return valorDoPedido; }
-            set { valorDoPedido = value; }
-        }
 
-        internal Pedido(Prato prato)
+        internal Pedido(Prato pedido)
         {
-            pratosDoPedido.Add(prato);
+            pratosDoPedido.Add(pedido);
         }
 
         internal decimal CalcularValorPedido()
         {
+            decimal valorDoPedido = 0;
 
             foreach (Prato prato in pratosDoPedido)
             {

@@ -2,7 +2,6 @@
 namespace ProjetoRestauranteUsuario.Models.Business
 {
     using Enums;
-    using CardapioBistro;
 
     internal class Mesa
     {
@@ -45,7 +44,7 @@ namespace ProjetoRestauranteUsuario.Models.Business
         {
             if (_capacidade >= limitePessoas)
             {
-                _reservaMesa = new Reservas(dataReserva, cpf, turno);
+                _reservaMesa = ReservaData.Reservar(dataReserva, cpf, turno, this);
                 _statusMesa = StatusMesaEnum.Reservado;
             }
             else
@@ -66,18 +65,6 @@ namespace ProjetoRestauranteUsuario.Models.Business
             _contaMesa.ExibirDetalhes();
             _contaMesa.Pagar();
             _statusMesa = StatusMesaEnum.Disponivel;
-        }
-
-        internal void PedirConta()
-        {
-            _contaMesa.ExibirDetalhes();
-            _contaMesa.Pagar();
-            _statusMesa = StatusMesaEnum.Disponivel;
-        }
-        internal void FazerPedido(int indice)
-        {
-            var pedido = new Pedido(CardapioPratos.SelecionarItem(indice));
-            _contaMesa.AdicionarPedido(pedido);
         }
 
         internal void AbrirConta()

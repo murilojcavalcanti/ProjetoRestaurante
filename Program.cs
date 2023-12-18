@@ -1,9 +1,6 @@
 ﻿using Figgle;
-using ProjetoRestauranteUsuario.Enums;
 using ProjetoRestauranteUsuario.Interface;
 using ProjetoRestauranteUsuario.Interface.Metodos;
-using ProjetoRestauranteUsuario.Models.Business;
-using ProjetoRestauranteUsuario.Models.Usuarios.AcervoUsuarios;
 namespace ProjetoRestauranteUsuario
 {
     using Models.Usuarios;

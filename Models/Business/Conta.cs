@@ -1,5 +1,4 @@
-﻿using System;
-
+﻿
 namespace ProjetoRestauranteUsuario.Models.Business
 {
     using AlimentosBistro;
@@ -14,8 +13,15 @@ namespace ProjetoRestauranteUsuario.Models.Business
             set { pago = value; }
         }
 
-        internal void AdicionarPedido(Pedido pedido)
+        internal List<Pedido> Pedidos
         {
+            get { return pedidos; }
+            set { pedidos = value; }
+        }
+
+        internal void AdicionarPedido (Prato pedidoCliente)
+        {
+            var pedido = new Pedido(pedidoCliente);
             pedidos.Add(pedido);
         }
 
@@ -34,12 +40,6 @@ namespace ProjetoRestauranteUsuario.Models.Business
         internal void ExibirDetalhes()
         {
             Console.WriteLine("Detalhes da Conta:");
-
-            //foreach (var pedido in pedidos)
-            //{
-            //    pedido.ExibirItens();
-            //    Console.WriteLine("-------------------------");
-            //}
 
             Console.WriteLine($"Total da Conta: R$ {CalcularTotal():F2}");
         }

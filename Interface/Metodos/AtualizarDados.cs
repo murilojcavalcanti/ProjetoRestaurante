@@ -7,8 +7,6 @@ using System.Threading.Tasks;
 namespace ProjetoRestauranteUsuario.Interface.Metodos
 {
     using Models.CardapioBistro;
-    using Models.Usuarios.AcervoUsuarios;
-    using Models.Business;
     internal class AtualizarDados
     {
         public static void AtualizarCardapio()

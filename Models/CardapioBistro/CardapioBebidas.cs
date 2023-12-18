@@ -11,12 +11,12 @@ namespace ProjetoRestauranteUsuario.Models.CardapioBistro
     {
         internal CardapioBebidas()
         {
-            cardapioCompleto = new List<Bebida>
-            {
-                new Bebida("Lasanha", 15.99m, "Massa com molho de tomate, queijo e carne."),
-            };
+            cardapioCompleto = new List<Bebida>();
+        }
 
-
+        internal static Bebida SelecionarItem(int indice)
+        {
+            return cardapioCompleto[indice];
         }
     }
 }

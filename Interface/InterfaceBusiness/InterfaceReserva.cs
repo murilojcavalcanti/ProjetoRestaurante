@@ -27,33 +27,40 @@ namespace ProjetoRestauranteUsuario.Interface.InterfaceBusiness
         public static void TemReserva()
         {
             bool sair = false;
+            Console.WriteLine("Digite o seu CPF:");
+            string cpf = Console.ReadLine();
 
-            do
+            if (ReservaData.VerificarReserva(cpf))
             {
-                Console.Clear();
-
-                Console.WriteLine("Gostaria de fazer seu pedido?" + "Veja as opções em nosso cardápio:");
-                string[] opcoesUsuario = { "1. Visualizar cardápio de pratos", "2. Visualizar cardápio de bebidas", "3. Sair" };
-
-                var opcoes = new ConsoleMenu<string>(opcoesUsuario);
-                int selecaoUsuario = opcoes.ShowMenu();
-                switch (selecaoUsuario)
+                var reserva = ReservaData.SelecionarReserva(cpf);
+                do
                 {
-                    case 0:
-                        InterfaceCardápio.CardapioRefeicoes();
-                        break;
-                    case 1:
-                        InterfaceCardápio.CardapioBebidas();
-                        break;
-                    case 2:
-                        sair = true;
-                        break;
-                }
+                    Console.Clear();
 
-                Console.WriteLine("Pressione Enter para continuar...");
-                Console.ReadLine();
+                    Console.WriteLine("Gostaria de fazer seu pedido?" + "Veja as opções em nosso cardápio e selecione o que desejar:");
+                    string[] opcoesUsuario = { "1. Cardápio de pratos", "2. Cardápio de bebidas", "3. Sair" };
 
-            } while (!sair);
+                    var opcoes = new ConsoleMenu<string>(opcoesUsuario);
+                    int selecaoUsuario = opcoes.ShowMenu();
+                    InterfaceCardápio.AbrirConta(reserva);
+                    switch (selecaoUsuario)
+                    {
+                        case 0:
+                            InterfaceCardápio.CardapioPratosRestaurante(reserva);
+                            break;
+                        case 1:
+                            InterfaceCardápio.CardapioBebidasRestaurante(reserva);
+                            break;
+                        case 2:
+                            sair = true;
+                            reserva.Mesa.FecharConta();
+                            break;
+                    }
+                } while (!sair);
+            } else
+            {
+                Console.WriteLine("Não há reserva para este CPF.");
+            }
         }
     }
 

@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Globalization;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
+﻿
 namespace ProjetoRestauranteUsuario.Models.Business
 {
     internal class Reservas
@@ -12,8 +6,14 @@ namespace ProjetoRestauranteUsuario.Models.Business
         private string _cpfCliente;
         private DateTime _dataReserva;
         private char _turno;
+        private Mesa _mesa;
         private bool _confirmacaoReserva;
 
+        internal Mesa Mesa
+        {
+            get { return _mesa; }
+            set { _mesa = value; }
+        }
 
         internal string CpfCliente
         {
@@ -45,12 +45,13 @@ namespace ProjetoRestauranteUsuario.Models.Business
             }
         }
 
-        internal Reservas(DateTime dataReserva, string cpf, char turno)
+        internal Reservas(DateTime dataReserva, string cpf, char turno, Mesa mesa)
         {
             _dataReserva = dataReserva;
             _cpfCliente = cpf;
             _turno = turno;
             _confirmacaoReserva = true;
+            _mesa = mesa;
         }
 
         internal bool ConfirmacaoReserva(DateTime dataReserva, string cpf, char turno)

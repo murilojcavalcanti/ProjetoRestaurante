@@ -15,9 +15,5 @@ namespace ProjetoRestauranteUsuario.Models.AlimentosBistro
             this.Nome = nome;
         }
 
-        internal override void ObterInformacoes()
-        {
-            Console.WriteLine($"Nome: {this.Nome} \nDescrição: {this.Descricao} \nPreço: {this.Preco}");
-        }
     }
 }

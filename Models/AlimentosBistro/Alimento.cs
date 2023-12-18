@@ -34,6 +34,9 @@ namespace ProjetoRestauranteUsuario.Models.AlimentosBistro
             this.descricao = descricao;
         }
 
-        internal abstract void ObterInformacoes();
+        internal void ObterInformacoes()
+        {
+            Console.WriteLine($"Nome: {this.Nome} \nDescrição: {this.Descricao} \nPreço: {this.Preco}");
+        }
     }
 }

@@ -8,5 +8,10 @@ namespace ProjetoRestauranteUsuario.Models.CardapioBistro
         {
             cardapioCompleto = new List<Prato>();
         }
+
+        internal static Prato SelecionarItem(int indice)
+        {
+            return cardapioCompleto[indice];
+        }
     }
 }
