@@ -27,7 +27,7 @@ namespace ProjetoRestauranteUsuario
             get { return descricao; }
             set { descricao = value; }
         }
-        internal Prato(string nome, decimal preco, string descricao)
+        public Prato (string nome, decimal preco, string descricao)
         {
             this.nome = nome;
             this.preco = preco;

@@ -1,11 +1,11 @@
 ﻿namespace ProjetoRestauranteUsuario.Interface
 {
-    public class ConsoleMenuUsuario
+    public class ConsoleMenu
     {
         private readonly string[] opcoes;
         private int selectedIndex;
 
-        public ConsoleMenuUsuario(string[] menuItems)
+        public ConsoleMenu(string[] menuItems)
         {
             opcoes = menuItems;
             selectedIndex = 0;
