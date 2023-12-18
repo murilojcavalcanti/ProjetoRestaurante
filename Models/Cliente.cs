@@ -15,6 +15,5 @@ namespace ProjetoRestauranteUsuario.Models
             this.nome = nome;
             this.id = id;
         }
-
     }
 }

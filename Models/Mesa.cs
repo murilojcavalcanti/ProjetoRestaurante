@@ -43,11 +43,17 @@ namespace ProjetoRestauranteUsuario.Models
             this._capacidade = capacidade;
             this._statusMesa = StatusMesaEnum.Disponivel;
         }
-
-        internal void Reservar(DateTime dataReserva, string cpf, char turno)
+        internal void Reservar(DateTime dataReserva, string cpf, char turno, int limitePessoas)
         {
-            this._reservaMesa = new Reservas(dataReserva, cpf, turno);
-            _statusMesa = StatusMesaEnum.Reservado;
+            if (_capacidade >= limitePessoas)
+            {
+                this._reservaMesa = new Reservas(dataReserva, cpf, turno);
+                _statusMesa = StatusMesaEnum.Reservado;
+            }
+            else
+            {
+                Console.WriteLine($"A mesa não comporta {limitePessoas} pessoas");
+            }
         }
         internal bool MesaReservada(DateTime dataReserva, string cpf, char turno)
         {
