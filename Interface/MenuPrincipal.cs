@@ -1,13 +1,5 @@
-﻿using Figgle;
-using ProjetoRestauranteUsuario.Interface.Metodos;
-using ProjetoRestauranteUsuario.Models;
+﻿using ProjetoRestauranteUsuario.Interface.Metodos;
 using ProjetoRestauranteUsuario.Models.CardapioBistro;
-using System;
-using System.Collections.Generic;
-using System.Globalization;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ProjetoRestauranteUsuario.Interface
 {

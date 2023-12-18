@@ -15,14 +15,14 @@
             _cargo = cargo;
         }
 
-        internal void AbrirConta(Mesa mesa)
-        {
-            mesa.Conta(new Conta());
-        }
+        //internal void AbrirConta(Mesa mesa)
+        //{
+        //    mesa.Conta(new Conta());
+        //}
 
-        internal void FecharConta(Mesa mesa)
-        {
-            mesa.Conta.FecharConta();
-        }
+        //internal void FecharConta(Mesa mesa)
+        //{
+        //    mesa.Conta.FecharConta();
+        //}
     }
 }

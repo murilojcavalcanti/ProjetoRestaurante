@@ -9,11 +9,10 @@ namespace ProjetoRestauranteUsuario.Interface.Metodos
 {
     internal class InterfaceCardápio
     {
-        public static void CardapioPratos()
+        public static void CardapioRefeicoes()
         {
-            //Console.WriteLine("Pratos adicionados");
-            Cardapio.RecebeJson(@"../../../ReceivingData/pratos.json");
-            Cardapio.mostrarCardapio();
+            CardapioPratos.RecebeJson(@"../../../ReceivingData/pratos.json");
+            CardapioPratos.MostrarCardapio();
         }
 
         public static void CardapioBebidas()

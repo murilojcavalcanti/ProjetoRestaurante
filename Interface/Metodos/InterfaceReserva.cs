@@ -1,4 +1,5 @@
 ﻿using ProjetoRestauranteUsuario.Models.Business;
+using ProjetoRestauranteUsuario.Models.CardapioBistro;
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -58,7 +59,7 @@ namespace ProjetoRestauranteUsuario.Interface.Metodos
                 switch (selecaoUsuario)
                 {
                     case 0:
-                        InterfaceCardápio.CardapioPratos();
+                        InterfaceCardápio.CardapioRefeicoes();
                         break;
                     case 1:
                         InterfaceCardápio.CardapioBebidas();

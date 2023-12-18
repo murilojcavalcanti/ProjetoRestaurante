@@ -11,7 +11,7 @@ namespace ProjetoRestauranteUsuario.ReceivingData
 {
     internal static class ReceiveData
     {
-        internal static void RecebeArquivoClientes<T>(List<T> ListaGenerica, string Caminho)
+        internal static void RecebeArquivos<T>(List<T> ListaGenerica, string Caminho)
         {
             List<T> ListaDados = new List<T>();
 

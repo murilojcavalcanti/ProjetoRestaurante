@@ -35,11 +35,11 @@ namespace ProjetoRestauranteUsuario.Models.Business
         {
             Console.WriteLine("Detalhes da Conta:");
 
-            foreach (var pedido in pedidos)
-            {
-                pedido.ExibirItens();
-                Console.WriteLine("-------------------------");
-            }
+            //foreach (var pedido in pedidos)
+            //{
+            //    pedido.ExibirItens();
+            //    Console.WriteLine("-------------------------");
+            //}
 
             Console.WriteLine($"Total da Conta: R$ {CalcularTotal():F2}");
         }

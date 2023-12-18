@@ -1,5 +1,6 @@
 ﻿using Figgle;
 using ProjetoRestauranteUsuario.Interface;
+using ProjetoRestauranteUsuario.Models.CardapioBistro;
 namespace ProjetoRestauranteUsuario
 {
 
@@ -7,6 +8,7 @@ namespace ProjetoRestauranteUsuario
     {
         public static void Main(string[] args)
         {
+
             ConsoleKeyInfo teclaUsuario;
             do
             {

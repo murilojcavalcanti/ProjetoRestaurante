@@ -14,7 +14,7 @@ namespace ProjetoRestauranteUsuario.Models.CardapioBistro
 
     internal abstract class CardapioBase<T> where T : Alimento
     {
-        protected static List<T> cardapioCompleto;
+        protected static List<T> cardapioCompleto  = new List<T>();
 
         internal static int MostrarCardapio()
         {
@@ -52,5 +52,11 @@ namespace ProjetoRestauranteUsuario.Models.CardapioBistro
                 teclaUsuario = Console.ReadKey();
             } while (teclaUsuario.Key != ConsoleKey.Enter);
         }
+
+        internal static void RecebeJson(string caminho)
+        {
+            ReceiveData.RecebeArquivos<T>(cardapioCompleto, caminho);
+        }
+
     }
 }
