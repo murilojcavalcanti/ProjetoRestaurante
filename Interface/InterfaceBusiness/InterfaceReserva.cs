@@ -5,7 +5,7 @@ namespace ProjetoRestauranteUsuario.Interface.InterfaceBusiness
 {
     internal class InterfaceReserva
     {
-        public static bool FazerReserva(Mesa mesa)
+        public static void FazerReserva(Mesa mesa)
         {
             Console.WriteLine("Digite o seu CPF:");
             string cpf = Console.ReadLine();
@@ -16,24 +16,11 @@ namespace ProjetoRestauranteUsuario.Interface.InterfaceBusiness
                 Console.WriteLine("Digite o turno da reserva (M para manhã, T para tarde, N para noite):");
                 char turno = char.ToUpper(Console.ReadKey().KeyChar);
 
-
-                Reservas reserva = new Reservas(dataReserva, cpf, turno);
-
-                if (reserva.ConfirmacaoReserva(dataReserva, cpf, turno))
-                {
-                    Console.WriteLine("Reserva confirmada!");
-                    return true;
-                }
-                else
-                {
-                    Console.WriteLine("Não foi possível confirmar a reserva.");
-                    return false;
-                }
+                MesaData.Reservar(mesa.Numero, dataReserva, cpf, turno, 4);
             }
             else
             {
                 Console.WriteLine("Formato de data inválido.");
-                return false;
             }
         }
 

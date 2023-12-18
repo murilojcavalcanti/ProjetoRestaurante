@@ -1,29 +1,27 @@
 ﻿using Figgle;
+using ProjetoRestauranteUsuario.Enums;
 using ProjetoRestauranteUsuario.Interface;
 using ProjetoRestauranteUsuario.Interface.Metodos;
 using ProjetoRestauranteUsuario.Models.Business;
+using ProjetoRestauranteUsuario.Models.Usuarios.AcervoUsuarios;
 namespace ProjetoRestauranteUsuario
 {
-
+    using Models.Usuarios;
     public class Program
     {
         public static void Main(string[] args)
         {
-            AtualizarDados.AtualizarMesas();
-            MesaData.ExibirMesas();
-            //AtualizarDados.AtualizarCardapio();
-            //AtualizarDados.AtualizarFuncionarios();
-            //AtualizarDados.AtualizarMesas();
-            //Console.Clear();
+            AtualizarDados.AtualizarCardapio();
+            Console.Clear();
 
-            //ConsoleKeyInfo teclaUsuario;
-            //do
-            //{
-            //    MostrarNomeRestaurante();
-            //    Console.WriteLine("BEM VINDO AO RESTAURANTE GEEKS </BISTRÔ>" + "\nAperte Enter para começar");
-            //    teclaUsuario = Console.ReadKey();
-            //} while (teclaUsuario.Key != ConsoleKey.Enter);
-            //MenuPrincipal.SelecionarUsuario();
+            ConsoleKeyInfo teclaUsuario;
+            do
+            {
+                MostrarNomeRestaurante();
+                Console.WriteLine("BEM VINDO AO RESTAURANTE GEEKS </BISTRÔ>" + "\nAperte Enter para começar");
+                teclaUsuario = Console.ReadKey();
+            } while (teclaUsuario.Key != ConsoleKey.Enter);
+            MenuPrincipal.SelecionarUsuario();
         }
         public static void MostrarNomeRestaurante()
         {

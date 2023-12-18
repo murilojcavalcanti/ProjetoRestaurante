@@ -2,11 +2,32 @@
 namespace ProjetoRestauranteUsuario.Models.Business
 {
     using ProjetoRestauranteUsuario.Enums;
-    using ReceivingData;
 
     internal class MesaData
     {
-        private static List<Mesa> _mesas = new List<Mesa>();
+        private static List<Mesa> _mesas = new List<Mesa>
+        {
+            new Mesa(1, 4),
+            new Mesa(2, 6),
+            new Mesa(3, 2),
+            new Mesa(4, 8),
+            new Mesa(5, 5),
+            new Mesa(6, 3),
+            new Mesa(7, 10),
+            new Mesa(8, 4),
+            new Mesa(9, 6),
+            new Mesa(10, 7),
+            new Mesa(11, 4),
+            new Mesa(12, 6),
+            new Mesa(13, 2),
+            new Mesa(14, 8),
+            new Mesa(15, 5),
+            new Mesa(16, 3),
+            new Mesa(17, 10),
+            new Mesa(18, 4),
+            new Mesa(19, 6),
+            new Mesa(20, 7)
+        };
 
         internal List<Mesa> Mesas
         {
@@ -14,19 +35,9 @@ namespace ProjetoRestauranteUsuario.Models.Business
             set { _mesas = value; }
         }
 
-        internal static void AdicionarMesa(Mesa mesa)
-        {
-            _mesas.Add(mesa);
-        }
-
         internal static Mesa BuscarMesa(int numero)
         {
             return _mesas.FirstOrDefault(m => m.Numero == numero);
-        }
-
-        internal static void RemoverMesa(int numero)
-        {
-            _mesas.Remove(BuscarMesa(numero));
         }
 
         internal static void AlterarMesa(int numero, int capacidade)
@@ -59,27 +70,29 @@ namespace ProjetoRestauranteUsuario.Models.Business
             mesa.LiberarMesa();
         }
 
-        internal static void ExibirMesas(StatusMesaEnum? statusMesaFiltro = null)
+        internal static void ExibirMesasDisponiveis()
         {
-            //var mesasFiltradas = _mesas.Where(mesa => statusMesaFiltro == null || mesa.StatusMesa == statusMesaFiltro);
-
-            //return mesasFiltradas.Select(mesa =>
-            //    $"Mesa {mesa.Numero.ToString("D2")} - {mesa.Capacidade} pessoa{(mesa.Capacidade != 1 ? "s" : "")}")
-            //    .ToArray();
-            foreach (var mesa in _mesas)
+            Console.WriteLine("Mesas disponíveis:");
+            foreach (Mesa mesa in _mesas)
             {
-                if (statusMesaFiltro == null || mesa.StatusMesa == statusMesaFiltro)
+                if (mesa.StatusMesa == StatusMesaEnum.Disponivel)
                 {
-                    Console.WriteLine($"Mesa {mesa.Numero} - {mesa.Capacidade}");
+                    Console.WriteLine($"Mesa {mesa.Numero} - Capacidade: {mesa.Capacidade}");
                 }
             }
         }
 
-        internal static void RecebeJson(string caminho)
+        internal static List<string> RetornarMesasDisponiveis()
         {
-            ReceiveData.RecebeArquivos<Mesa>(_mesas, caminho);
+                        List<string> mesasDisponiveis = new List<string>();
+            foreach (Mesa mesa in _mesas)
+            {
+                if (mesa.StatusMesa == StatusMesaEnum.Disponivel)
+                {
+                    mesasDisponiveis.Add($"Mesa {mesa.Numero} - Capacidade: {mesa.Capacidade}");
+                }
+            }
+            return mesasDisponiveis;
         }
-
-
     }
 }

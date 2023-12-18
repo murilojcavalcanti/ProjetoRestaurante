@@ -12,6 +12,13 @@ namespace ProjetoRestauranteUsuario.Models.Business
         private Conta _contaMesa;
         private Reservas _reservaMesa;
 
+        public Mesa(int numero, int capacidade)
+        {
+            _numero = numero;
+            _capacidade = capacidade;
+            _statusMesa = StatusMesaEnum.Disponivel;
+
+        }
         internal int Numero
         {
             get { return _numero; }
@@ -43,7 +50,7 @@ namespace ProjetoRestauranteUsuario.Models.Business
             }
             else
             {
-                Console.WriteLine($"A mesa não comporta {limitePessoas} pessoas");
+                throw new Exception("A mesa não comporta o número de pessoas informado.");
             }
         }
         internal bool MesaReservada(DateTime dataReserva, string cpf, char turno)

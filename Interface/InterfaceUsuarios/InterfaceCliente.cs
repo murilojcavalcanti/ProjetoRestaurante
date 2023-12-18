@@ -29,7 +29,7 @@ namespace ProjetoRestauranteUsuario.Interface.InterfaceUsuarios
                 switch (selecaoUsuario)
                 {
                     case 0:
-                        //InterfaceReserva.FazerReserva(MesaData.BuscarMesa(InterfaceMesa.SelecionarMesa()+1));
+                        InterfaceReserva.FazerReserva(MesaData.BuscarMesa(InterfaceMesa.SelecionarMesa()+1));
                         break;
                     case 1:
                         InterfaceReserva.TemReserva();
@@ -38,7 +38,7 @@ namespace ProjetoRestauranteUsuario.Interface.InterfaceUsuarios
                         MostrarCardapio();
                         break;
                     case 3:
-                        InfoRestaurante.Restaurante();
+                        MesaData.ExibirMesasDisponiveis();
                         break;
                     case 4:
                         sair = true;

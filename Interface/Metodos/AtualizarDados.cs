@@ -21,25 +21,5 @@ namespace ProjetoRestauranteUsuario.Interface.Metodos
             Console.WriteLine("Pressione Enter para continuar...");
             Console.ReadLine();
         }
-
-        internal static void AtualizarFuncionarios()
-        {
-            Console.Clear();
-            Console.WriteLine("Atualizando funcionários...");
-            FuncionarioData.RecebeJson(@"../../../ReceivingData/funcionarios.json");
-            Console.WriteLine("Funcionários atualizados com sucesso!");
-            Console.WriteLine("Pressione Enter para continuar...");
-            Console.ReadLine();
-        }
-
-        internal static void AtualizarMesas()
-        {
-            Console.Clear();
-            Console.WriteLine("Atualizando mesas...");
-            MesaData.RecebeJson(@"../../../ReceivingData/mesas.json");
-            Console.WriteLine("Mesas atualizadas com sucesso!");
-            Console.WriteLine("Pressione Enter para continuar...");
-            Console.ReadLine();
-        }
     }
 }
