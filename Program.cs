@@ -3,7 +3,8 @@ using ProjetoRestauranteUsuario.Interface;
 using ProjetoRestauranteUsuario.Interface.Metodos;
 namespace ProjetoRestauranteUsuario
 {
-    using Models.Usuarios;
+    using ProjetoRestauranteUsuario.Interface.InterfaceUsuarios;
+
     public class Program
     {
         public static void Main(string[] args)
@@ -18,7 +19,7 @@ namespace ProjetoRestauranteUsuario
                 Console.WriteLine("BEM VINDO AO RESTAURANTE GEEKS </BISTRÔ>" + "\nAperte Enter para começar");
                 teclaUsuario = Console.ReadKey();
             } while (teclaUsuario.Key != ConsoleKey.Enter);
-            MenuPrincipal.SelecionarUsuario();
+            InterfaceCliente.ExibirMenuCliente();
         }
         public static void MostrarNomeRestaurante()
         {
