@@ -11,7 +11,7 @@ namespace ProjetoRestauranteUsuario
             do
             {
                 MostrarNomeRestaurante();
-                Console.WriteLine("BEM VINDO AO RESTAURANTE SEM NOME" + "\nAperte Enter para começar");
+                Console.WriteLine("BEM VINDO AO RESTAURANTE GEEKS </BISTRÔ>" + "\nAperte Enter para começar");
                 teclaUsuario = Console.ReadKey();
             } while (teclaUsuario.Key != ConsoleKey.Enter);
             MenuPrincipal.ExibirMenu();

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ProjetoRestauranteUsuario
+namespace ProjetoRestauranteUsuario.Models.CardapioBistro
 {
 
     using Interface;
@@ -31,7 +31,7 @@ namespace ProjetoRestauranteUsuario
             new Prato("Churrasco", 18.75m, "Carnes grelhadas, como picanha, linguiça e frango.")
         };
 
-       
+
         internal static int mostrarCardapio()
         {
             string[] nomesPratos = cardapioCompleto.Select(prato => prato.Nome).ToArray();
@@ -51,12 +51,12 @@ namespace ProjetoRestauranteUsuario
         internal static void RecebeJson(string caminho)
         {
 
-            ReceiveData.RecebeArquivoClientes(cardapioCompleto,caminho);
+            ReceiveData.RecebeArquivoClientes(cardapioCompleto, caminho);
 
-              
+
         }
 
-        internal static Prato SelecionarPrato (int indice)
+        internal static Prato SelecionarPrato(int indice)
         {
             return cardapioCompleto[indice];
         }
@@ -66,10 +66,15 @@ namespace ProjetoRestauranteUsuario
             ConsoleKeyInfo teclaUsuario;
             do
             {
-                Console.WriteLine($"{cardapioCompleto}\n"+"\nPressione Enter para voltar ao menu principal...");
+                foreach (Prato prato in cardapioCompleto)
+                {
+                    Console.WriteLine(prato.ToString());
+                }
+
+                Console.WriteLine("\nPressione Enter para voltar ao menu principal...");
                 teclaUsuario = Console.ReadKey();
-            } while(teclaUsuario.Key != ConsoleKey.Enter);
-            
+            } while (teclaUsuario.Key != ConsoleKey.Enter);
+
         }
 
         internal static void ApenasExibirBebidas()
