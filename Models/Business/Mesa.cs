@@ -1,17 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
-using System.Linq;
-using System.Reflection.PortableExecutable;
-using System.Security.Cryptography;
-using System.Text;
-using System.Threading.Tasks;
-using ProjetoRestauranteUsuario.Enums;
-using ProjetoRestauranteUsuario.Models.CardapioBistro;
 
-namespace ProjetoRestauranteUsuario.Models
+namespace ProjetoRestauranteUsuario.Models.Business
 {
+    using Enums;
+    using CardapioBistro;
+
     internal class Mesa
     {
         private readonly int _numero;
@@ -34,20 +29,30 @@ namespace ProjetoRestauranteUsuario.Models
             get { return _statusMesa; }
             set { _statusMesa = value; }
         }
-        internal Conta Conta { get { return _contaMesa; } }
+        internal Conta Conta 
+        { 
+            get { return _contaMesa; }
+            set { _contaMesa = value; }
+        }
+
         internal Reservas Reservas { get { return _reservaMesa; } }
 
         internal Mesa(int numero, int capacidade)
         {
-            this._numero = numero;
-            this._capacidade = capacidade;
-            this._statusMesa = StatusMesaEnum.Disponivel;
+            _numero = numero;
+            _capacidade = capacidade;
+            _statusMesa = StatusMesaEnum.Disponivel;
+        }
+
+        internal void AbrirConta(Conta conta)
+        {
+            this.Conta = conta;
         }
         internal void Reservar(DateTime dataReserva, string cpf, char turno, int limitePessoas)
         {
             if (_capacidade >= limitePessoas)
             {
-                this._reservaMesa = new Reservas(dataReserva, cpf, turno);
+                _reservaMesa = new Reservas(dataReserva, cpf, turno);
                 _statusMesa = StatusMesaEnum.Reservado;
             }
             else
@@ -67,14 +72,14 @@ namespace ProjetoRestauranteUsuario.Models
         }
         internal void FazerPedido(int indice)
         {
-            var pedido = new Pedido(Cardapio.SelecionarPrato(indice));
+            var pedido = new Pedido(CardapioPratos.SelecionarItem(indice));
             _contaMesa.AdicionarPedido(pedido);
         }
 
         internal void AbrirConta()
         {
             _statusMesa = StatusMesaEnum.Ocupada;
-            this._contaMesa = new Conta();
+            _contaMesa = new Conta();
         }
     }
 }

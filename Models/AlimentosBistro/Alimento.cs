@@ -6,7 +6,34 @@ using System.Threading.Tasks;
 
 namespace ProjetoRestauranteUsuario.Models.AlimentosBistro
 {
-    internal class Alimento
+    abstract class Alimento
     {
+        private decimal preco;
+        private string nome;
+        private string descricao;
+
+        internal decimal Preco
+        {
+            get { return preco; }
+            set { preco = value; }
+        }
+        internal string Nome
+        {
+            get { return nome; }
+            set { nome = value; }
+        }
+        internal string Descricao
+        {
+            get { return descricao; }
+            set { descricao = value; }
+        }
+        public Alimento (string nome, decimal preco, string descricao)
+        {
+            this.nome = nome;
+            this.preco = preco;
+            this.descricao = descricao;
+        }
+
+        internal abstract void ObterInformacoes();
     }
 }

@@ -14,31 +14,31 @@ namespace ProjetoRestauranteUsuario.Models.CardapioBistro
 
     internal abstract class CardapioBase<T> where T : Alimento
     {
-        protected List<T> cardapioCompleto;
+        protected static List<T> cardapioCompleto;
 
-        internal int MostrarCardapio()
+        internal static int MostrarCardapio()
         {
             string[] nomesItens = cardapioCompleto.Select(item => item.Nome).ToArray();
             ConsoleMenu menuCardapio = new ConsoleMenu(nomesItens);
             return menuCardapio.ShowMenu();
         }
 
-        internal void AdicionarItem(T item)
+        internal static void AdicionarItem(T item)
         {
             cardapioCompleto.Add(item);
         }
 
-        internal void RemoverItem(T item)
+        internal static void RemoverItem(T item)
         {
             cardapioCompleto.Remove(item);
         }
 
-        internal T SelecionarItem(int indice)
+        internal static T SelecionarItem(int indice)
         {
             return cardapioCompleto[indice];
         }
 
-        internal void ExibirItens()
+        internal static void ExibirItens()
         {
             ConsoleKeyInfo teclaUsuario;
             do
@@ -52,3 +52,5 @@ namespace ProjetoRestauranteUsuario.Models.CardapioBistro
                 teclaUsuario = Console.ReadKey();
             } while (teclaUsuario.Key != ConsoleKey.Enter);
         }
+    }
+}

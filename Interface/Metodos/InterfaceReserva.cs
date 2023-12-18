@@ -1,4 +1,4 @@
-﻿using ProjetoRestauranteUsuario.Models;
+﻿using ProjetoRestauranteUsuario.Models.Business;
 using System;
 using System.Collections.Generic;
 using System.Globalization;

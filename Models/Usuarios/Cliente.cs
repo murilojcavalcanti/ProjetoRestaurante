@@ -5,9 +5,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ProjetoRestauranteUsuario.Models
+namespace ProjetoRestauranteUsuario.Models.Usuarios
 {
-    internal class Cliente : Usuario 
+    internal class Cliente : Usuario
     {
         internal Cliente(string nome, int id)
             : base(nome, id)

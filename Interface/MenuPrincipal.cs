@@ -66,10 +66,10 @@ namespace ProjetoRestauranteUsuario.Interface
                 switch (selecaoUsuario)
                 {
                     case 0:
-                        Cardapio.ApenasExibirPratos();
+                        CardapioPratos.ExibirItens();
                         break;
                     case 1:
-                        Cardapio.ApenasExibirBebidas();
+                        CardapioBebidas.ExibirItens();
                         break;
                     case 2:
                         ExibirMenu();

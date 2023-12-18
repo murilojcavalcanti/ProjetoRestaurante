@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ProjetoRestauranteUsuario.Models
+namespace ProjetoRestauranteUsuario.Models.Business
 {
     internal class Reservas
     {
@@ -47,10 +47,10 @@ namespace ProjetoRestauranteUsuario.Models
 
         internal Reservas(DateTime dataReserva, string cpf, char turno)
         {
-            this._dataReserva = dataReserva;
-            this._cpfCliente = cpf;
-            this._turno = turno;
-            this._confirmacaoReserva = true;
+            _dataReserva = dataReserva;
+            _cpfCliente = cpf;
+            _turno = turno;
+            _confirmacaoReserva = true;
         }
 
         internal bool ConfirmacaoReserva(DateTime dataReserva, string cpf, char turno)
@@ -65,6 +65,5 @@ namespace ProjetoRestauranteUsuario.Models
             }
         }
 
-        
     }
 }

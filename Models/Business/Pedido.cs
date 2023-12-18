@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using ProjetoRestauranteUsuario.Models.AlimentosBistro;
 
-namespace ProjetoRestauranteUsuario.Models
+namespace ProjetoRestauranteUsuario.Models.Business
 {
     internal class Pedido
     {
@@ -26,7 +26,7 @@ namespace ProjetoRestauranteUsuario.Models
 
         internal Pedido(Prato prato)
         {
-            pratosDoPedido.Add(prato);            
+            pratosDoPedido.Add(prato);
         }
 
         internal decimal CalcularValorPedido()
@@ -39,12 +39,6 @@ namespace ProjetoRestauranteUsuario.Models
             }
             return valorDoPedido;
         }
-
-        internal void ExibirItens()
-        {
-
-        }
-        
 
     }
 }

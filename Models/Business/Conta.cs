@@ -1,7 +1,8 @@
 ﻿using System;
 
-namespace ProjetoRestauranteUsuario.Models
+namespace ProjetoRestauranteUsuario.Models.Business
 {
+    using AlimentosBistro;
     internal class Conta
     {
         private List<Pedido> pedidos = new List<Pedido>();
@@ -12,6 +13,7 @@ namespace ProjetoRestauranteUsuario.Models
             get { return pago; }
             set { pago = value; }
         }
+
         internal void AdicionarPedido(Pedido pedido)
         {
             pedidos.Add(pedido);
