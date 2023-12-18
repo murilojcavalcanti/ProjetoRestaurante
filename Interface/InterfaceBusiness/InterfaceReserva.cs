@@ -20,7 +20,8 @@ namespace ProjetoRestauranteUsuario.Interface.InterfaceBusiness
             }
             else
             {
-                Console.WriteLine("Formato de data inválido.");
+                Console.WriteLine("Formato de data inválido.\n");
+                FazerReserva(mesa);
             }
         }
 
