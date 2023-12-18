@@ -1,0 +1,28 @@
+[
+  {
+    "nome": "Coca-Cola",
+    "preco": 3.5,
+    "descricao": "Refrigerante de cola"
+  },
+  {
+    "nome": "Suco de Laranja",
+    "preco": 5.0,
+    "descricao": "Suco natural de laranja"
+  },
+  {
+    "nome": "Cerveja Artesanal",
+    "preco": 8.75,
+    "descricao": "Cerveja artesanal local"
+  },
+  {
+    "nome": "Água Mineral",
+    "preco": 2.0,
+    "descricao": "Água mineral sem gás"
+  },
+  {
+    "nome": "Coquetel de Frutas",
+    "preco": 12.5,
+    "descricao": "Mistura refrescante de frutas"
+  }
+]
+
