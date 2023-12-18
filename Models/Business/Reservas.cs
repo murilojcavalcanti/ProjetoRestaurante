@@ -54,17 +54,5 @@ namespace ProjetoRestauranteUsuario.Models.Business
             _mesa = mesa;
         }
 
-        internal bool ConfirmacaoReserva(DateTime dataReserva, string cpf, char turno)
-        {
-            if (_dataReserva == dataReserva && _cpfCliente == cpf && _turno == turno)
-            {
-                return true; ;
-            }
-            else
-            {
-                return false;
-            }
-        }
-
     }
 }

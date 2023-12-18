@@ -52,10 +52,7 @@ namespace ProjetoRestauranteUsuario.Models.Business
                 throw new Exception("A mesa não comporta o número de pessoas informado.");
             }
         }
-        internal bool MesaReservada(DateTime dataReserva, string cpf, char turno)
-        {
-            return _reservaMesa.ConfirmacaoReserva(dataReserva, cpf, turno);
-        }
+        
         internal void LiberarMesa()
         {
             _statusMesa = StatusMesaEnum.Disponivel;

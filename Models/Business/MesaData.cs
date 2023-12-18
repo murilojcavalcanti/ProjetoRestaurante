@@ -58,18 +58,6 @@ namespace ProjetoRestauranteUsuario.Models.Business
             mesa.Reservar(dataReserva, cpf, turno, limitePessoas);
         }
 
-        internal static void FecharConta(int numero)
-        {
-            Mesa mesa = BuscarMesa(numero);
-            mesa.FecharConta();
-        }
-
-        internal static void LiberarMesa(int numero)
-        {
-            Mesa mesa = BuscarMesa(numero);
-            mesa.LiberarMesa();
-        }
-
         internal static void ExibirMesasDisponiveis()
         {
             Console.WriteLine("Mesas disponíveis:");

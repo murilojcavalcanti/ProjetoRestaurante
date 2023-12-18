@@ -7,21 +7,30 @@ namespace ProjetoRestauranteUsuario.Interface.InterfaceBusiness
     {
         public static void FazerReserva(Mesa mesa)
         {
-            Console.WriteLine("Digite o seu CPF:");
-            string cpf = Console.ReadLine();
-
-            Console.WriteLine("Digite a data da reserva (no formato dd/MM/yyyy):");
-            if (DateTime.TryParseExact(Console.ReadLine(), "dd/MM/yyyy", CultureInfo.InvariantCulture, DateTimeStyles.None, out DateTime dataReserva))
+            try
             {
-                Console.WriteLine("Digite o turno da reserva (M para manhã, T para tarde, N para noite):");
-                char turno = char.ToUpper(Console.ReadKey().KeyChar);
+                Console.WriteLine("Digite o seu CPF:");
+                string cpf = Console.ReadLine();
 
-                MesaData.Reservar(mesa.Numero, dataReserva, cpf, turno, 4);
-            }
-            else
+                Console.WriteLine("Digite a data da reserva (no formato dd/MM/yyyy):");
+                if (DateTime.TryParseExact(Console.ReadLine(), "dd/MM/yyyy", CultureInfo.InvariantCulture, DateTimeStyles.None, out DateTime dataReserva))
+                {
+                    Console.WriteLine("Digite o turno da reserva (M para manhã, T para tarde, N para noite):");
+                    char turno = char.ToUpper(Console.ReadKey().KeyChar);
+
+                    MesaData.Reservar(mesa.Numero, dataReserva, cpf, turno, 4);
+                }
+                else
+                {
+                    Console.WriteLine("Formato de data inválido.");
+                }
+
+            } catch (Exception e)
             {
-                Console.WriteLine("Formato de data inválido.");
+                Console.WriteLine(e.Message);
+                Thread.Sleep(2000);
             }
+            
         }
 
         public static void TemReserva()

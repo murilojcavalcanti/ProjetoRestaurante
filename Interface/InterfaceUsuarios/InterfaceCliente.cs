@@ -1,12 +1,6 @@
 ﻿using ProjetoRestauranteUsuario.Interface.InterfaceBusiness;
-using ProjetoRestauranteUsuario.Interface.Metodos;
 using ProjetoRestauranteUsuario.Models.Business;
 using ProjetoRestauranteUsuario.Models.CardapioBistro;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ProjetoRestauranteUsuario.Interface.InterfaceUsuarios
 {
@@ -21,15 +15,15 @@ namespace ProjetoRestauranteUsuario.Interface.InterfaceUsuarios
                 Console.Clear();
                 Console.WriteLine("Escolha uma das opções abaixo para começar:\n");
 
-
                 string[] opcoesUsuario = { "1. Desejo fazer uma reserva", "2. Já possuo reserva", "3. Ver cardápio", "4. Ver mesas disponíveis.", "5. Sair" };
 
-                var menuPrincipal = new ConsoleMenu <string> (opcoesUsuario);
+                var menuPrincipal = new ConsoleMenu<string>(opcoesUsuario);
                 int selecaoUsuario = menuPrincipal.ShowMenu();
+
                 switch (selecaoUsuario)
                 {
                     case 0:
-                        InterfaceReserva.FazerReserva(MesaData.BuscarMesa(InterfaceMesa.SelecionarMesa()+1));
+                        InterfaceReserva.FazerReserva(MesaData.BuscarMesa(InterfaceMesa.SelecionarMesa() + 1));
                         break;
                     case 1:
                         InterfaceReserva.TemReserva();
@@ -44,9 +38,6 @@ namespace ProjetoRestauranteUsuario.Interface.InterfaceUsuarios
                         sair = true;
                         break;
                 }
-
-                Console.WriteLine("Pressione Enter para continuar...");
-                Console.ReadLine();
 
             } while (!sair);
         }
@@ -71,13 +62,11 @@ namespace ProjetoRestauranteUsuario.Interface.InterfaceUsuarios
                         CardapioBebidas.ExibirItens();
                         break;
                     case 2:
-                        ExibirMenuCliente();
-                        break;
+                        return;
                 }
 
                 Console.WriteLine("Pressione Enter para continuar...");
                 Console.ReadLine();
-
             }
         }
     }
