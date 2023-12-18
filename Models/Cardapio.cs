@@ -35,7 +35,7 @@ namespace ProjetoRestauranteUsuario
         internal static int mostrarCardapio()
         {
             string[] nomesPratos = cardapioCompleto.Select(prato => prato.Nome).ToArray();
-            ConsoleMenuUsuario menuCardapio = new ConsoleMenuUsuario(nomesPratos);
+            ConsoleMenu menuCardapio = new ConsoleMenu(nomesPratos);
             return menuCardapio.ShowMenu();
         }
 
@@ -61,7 +61,25 @@ namespace ProjetoRestauranteUsuario
             return cardapioCompleto[indice];
         }
 
+        internal static void ApenasExibirPratos()
+        {
+            ConsoleKeyInfo teclaUsuario;
+            do
+            {
+                Console.WriteLine($"{cardapioCompleto}\n"+"\nPressione Enter para voltar ao menu principal...");
+                teclaUsuario = Console.ReadKey();
+            } while(teclaUsuario.Key != ConsoleKey.Enter);
+            
+        }
 
-
+        internal static void ApenasExibirBebidas()
+        {
+            ConsoleKeyInfo teclaUsuario;
+            do
+            {
+                Console.WriteLine($"!!!!CARDAPIO DE BEIBDAS AQUI!!!!\n" + "\nPressione Enter para voltar ao menu principal...");
+                teclaUsuario = Console.ReadKey();
+            } while (teclaUsuario.Key != ConsoleKey.Enter);
+        }
     }
 }
