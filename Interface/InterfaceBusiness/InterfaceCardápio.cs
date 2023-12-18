@@ -1,6 +1,8 @@
 ﻿
+using ProjetoRestauranteUsuario.Models.AlimentosBistro;
 using ProjetoRestauranteUsuario.Models.Business;
 using ProjetoRestauranteUsuario.Models.CardapioBistro;
+using System.IO;
 
 namespace ProjetoRestauranteUsuario.Interface.InterfaceBusiness
 {
@@ -14,16 +16,23 @@ namespace ProjetoRestauranteUsuario.Interface.InterfaceBusiness
         {
             int selecao = CardapioPratos.MostrarCardapio();
 
-            reserva.Mesa.Conta.AdicionarPedido(CardapioPratos.SelecionarItem(selecao));
+            Prato prato = CardapioPratos.SelecionarItem(selecao);
 
+            reserva.Mesa.Conta.AdicionarPedido(prato);
+
+            reserva.Mesa.Conta.ValorTotal += prato.Preco;
             Console.WriteLine("Pedido adicionado com sucesso!");
         }
 
         public static void CardapioBebidasRestaurante(Reservas reserva)
         {
             int selecao = CardapioBebidas.MostrarCardapio();
-            //reserva.Mesa.Conta.AdicionarPedido(CardapioBebidas.SelecionarItem(selecao));
-            //Console.WriteLine("Pedido adicionado com sucesso!");
+
+            Bebida bebida = CardapioBebidas.SelecionarItem(selecao);
+            reserva.Mesa.Conta.AdicionarPedido(bebida);
+
+            reserva.Mesa.Conta.ValorTotal += bebida.Preco;
+            Console.WriteLine("Pedido adicionado com sucesso!");
         }
     }
 }

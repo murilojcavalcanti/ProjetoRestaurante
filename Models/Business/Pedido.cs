@@ -20,17 +20,9 @@ namespace ProjetoRestauranteUsuario.Models.Business
             pratosDoPedido.Add(pedido);
         }
 
-        internal decimal CalcularValorPedido()
+        internal Pedido(Bebida pedido)
         {
-            decimal valorDoPedido = 0;
-
-            foreach (Prato prato in pratosDoPedido)
-            {
-                valorDoPedido += prato.Preco;
-
-            }
-            return valorDoPedido;
+            bebidasDoPedido.Add(pedido);
         }
-
     }
 }

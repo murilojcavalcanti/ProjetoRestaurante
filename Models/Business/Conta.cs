@@ -6,6 +6,13 @@ namespace ProjetoRestauranteUsuario.Models.Business
     {
         private List<Pedido> pedidos = new List<Pedido>();
         private bool pago;
+        private decimal valorTotal = 0;
+
+        internal decimal ValorTotal
+        {
+            get { return valorTotal; }
+            set { valorTotal = value; }
+        }
 
         internal bool Pago
         {
@@ -19,7 +26,13 @@ namespace ProjetoRestauranteUsuario.Models.Business
             set { pedidos = value; }
         }
 
-        internal void AdicionarPedido (Prato pedidoCliente)
+        internal void AdicionarPedido(Prato pedidoCliente)
+        {
+            var pedido = new Pedido(pedidoCliente);
+            pedidos.Add(pedido);
+        }
+
+        internal void AdicionarPedido(Bebida pedidoCliente)
         {
             var pedido = new Pedido(pedidoCliente);
             pedidos.Add(pedido);
@@ -27,14 +40,7 @@ namespace ProjetoRestauranteUsuario.Models.Business
 
         internal decimal CalcularTotal()
         {
-            decimal total = 0;
-
-            foreach (var pedido in pedidos)
-            {
-                total += pedido.CalcularValorPedido();
-            }
-
-            return total;
+            return valorTotal;
         }
 
         internal void ExibirDetalhes()

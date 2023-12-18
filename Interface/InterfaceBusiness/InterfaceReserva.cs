@@ -33,6 +33,8 @@ namespace ProjetoRestauranteUsuario.Interface.InterfaceBusiness
             if (ReservaData.VerificarReserva(cpf))
             {
                 var reserva = ReservaData.SelecionarReserva(cpf);
+                InterfaceCardápio.AbrirConta(reserva);
+
                 do
                 {
                     Console.Clear();
@@ -42,7 +44,6 @@ namespace ProjetoRestauranteUsuario.Interface.InterfaceBusiness
 
                     var opcoes = new ConsoleMenu<string>(opcoesUsuario);
                     int selecaoUsuario = opcoes.ShowMenu();
-                    InterfaceCardápio.AbrirConta(reserva);
                     switch (selecaoUsuario)
                     {
                         case 0:
