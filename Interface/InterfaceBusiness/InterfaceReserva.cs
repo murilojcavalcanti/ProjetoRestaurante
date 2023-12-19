@@ -1,4 +1,4 @@
-﻿using ProjetoRestauranteUsuario.Models.Business;
+using ProjetoRestauranteUsuario.Models.Business;
 using System.Globalization;
 
 namespace ProjetoRestauranteUsuario.Interface.InterfaceBusiness
